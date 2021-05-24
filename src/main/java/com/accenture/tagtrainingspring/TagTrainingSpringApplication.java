@@ -32,7 +32,7 @@ public class TagTrainingSpringApplication {
 
         System.out.println("Patient: " + screening.getPatient().getName() + " has a malignant diagnosis of " + screening.isMalignant());
         patient.setName("John Duffy");
-        Screening screening2 = new Screening(10, patient, LocalDate.of(2021, 5, 24), false);
+        patient .setDateOfBirth(LocalDate.of(1965, 1, 1));
         System.out.println("Patient: " + screening.getPatient().getName() + " has a malignant diagnosis of " + screening.isMalignant());
     }
 
