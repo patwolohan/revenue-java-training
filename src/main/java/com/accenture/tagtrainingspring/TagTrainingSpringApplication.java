@@ -26,12 +26,14 @@ public class TagTrainingSpringApplication {
                 "    |_/_/    \\_\\_____|    |_|_|  \\__,_|_|_| |_|_|_| |_|\\__, |\n" +
                 "                                                        __/ |\n" +
                 "                                                       |___/ \n");
-        Patient joe = new Patient("Joe Brady", 1, LocalDate.of(1940, 1, 1), Gender.MALE);
-        Screening screening = new Screening(10, joe, LocalDate.of(2021, 4, 24), true);
+        Patient patient = new Patient("Joe Brady", 1, LocalDate.of(1940, 1, 1), Gender.MALE);
+        Screening screening = new Screening(10, patient, LocalDate.of(2021, 4, 24), true);
 
 
         System.out.println("Patient: " + screening.getPatient().getName() + " has a malignant diagnosis of " + screening.isMalignant());
-
+        patient.setName("John Duffy");
+        Screening screening2 = new Screening(10, patient, LocalDate.of(2021, 5, 24), false);
+        System.out.println("Patient: " + screening.getPatient().getName() + " has a malignant diagnosis of " + screening.isMalignant());
     }
 
 }
