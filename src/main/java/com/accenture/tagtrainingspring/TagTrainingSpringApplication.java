@@ -36,4 +36,5 @@ public class TagTrainingSpringApplication {
         System.out.println("Patient: " + screening.getPatient().getName() + " has a malignant diagnosis of " + screening.isMalignant());
     }
 
+
 }
