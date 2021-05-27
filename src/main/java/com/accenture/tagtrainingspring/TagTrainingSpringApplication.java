@@ -2,6 +2,7 @@ package com.accenture.tagtrainingspring;
 
 //import com.accenture.tagtrainingspring.patient.Gender;
 //import com.accenture.tagtrainingspring.patient.Patient;
+
 import com.accenture.tagtrainingspring.patient.Gender;
 import com.accenture.tagtrainingspring.patient.Patient;
 import com.accenture.tagtrainingspring.screening.Screening;
@@ -20,9 +21,9 @@ public class TagTrainingSpringApplication {
     public static void main(String[] args) {
         SpringApplication.run(TagTrainingSpringApplication.class, args);
         printWelcomeMessage();
-        printlist();
+        //printlist();
         //printService();
-        //printFindScreening();
+        printFindScreening();
     }
 
     private static void printWelcomeMessage() {
@@ -38,11 +39,7 @@ public class TagTrainingSpringApplication {
     }
 
 
-
-
-
-
-    private static void printlist(){
+    private static void printlist() {
         Patient joe = new Patient("Joe Brady", 1, LocalDate.of(1940, 1, 1), Gender.MALE);
         Patient john = new Patient("John Duffy", 2, LocalDate.of(1950, 1, 1), Gender.MALE);
         Patient mary = new Patient("Mary Reilly", 3, LocalDate.of(1960, 1, 1), Gender.FEMALE);
@@ -53,35 +50,31 @@ public class TagTrainingSpringApplication {
         screeningList.add(screeningJoe);
         screeningList.add(screeningJohn);
         screeningList.add(screeningMary);
-        for(Screening screeningx: screeningList){
-            System.out.println("Patient: " + screeningx.getPatient().getName() + " has a malignant diagnosis of " + screeningx.isMalignant());}
-    }
-
-    private static void printService(){
-        ScreeningDatabase screeningDatabase = new ScreeningDatabase();
-        ScreeningService screeningService = new ScreeningService(screeningDatabase);
-        List<Screening> screeningList = screeningService.getScreenings();
-        for(Screening screeningx: screeningList){
-            System.out.println("Patient: " + screeningx.getPatient().getName() + " has a malignant diagnosis of " + screeningx.isMalignant());}
-    }
-
-    private static void printFindScreening(){
-        ScreeningDatabase screeningDatabase = new ScreeningDatabase();
-        ScreeningService screeningService = new ScreeningService(screeningDatabase);
-        Screening screening = screeningService.findScreening("Joe Brady");
-        if(screening!=null){
-            System.out.println("Patient: " + screening.getPatient().getName() + " has a malignant diagnosis of " + screening.isMalignant());
-        } else{
-            System.out.println("No Screening found");
+        for (Screening screeningx : screeningList) {
+            System.out.println("Patient: " + screeningx.getPatient().getName() + " has a malignant diagnosis of " + screeningx.isMalignant());
         }
     }
 
-
-    //System.out.println("Patient: " + screeningJoe.getPatient().getName() + " has a malignant diagnosis of " + screeningJoe.isMalignant());
-        //System.out.println("Patient: " + screeningJohn.getPatient().getName() + " has a malignant diagnosis of " + screeningJohn.isMalignant());
-        //System.out.println("Screening: " + screeningJoe.getScreeningId() + " has a match of " + screeningService.isPatientScreening(screeningJoe, joe) + " with patient " + joe.getName() );
-        //System.out.println("Screening: " + screeningJohn.getScreeningId() + " has a match of " + screeningService.isPatientScreening(screeningJohn, john) + " with patient " + john.getName() );
+    private static void printService() {
+        ScreeningDatabase screeningDatabase = new ScreeningDatabase();
+        ScreeningService screeningService = new ScreeningService(screeningDatabase);
+        List<Screening> screeningList = screeningService.getScreenings();
+        for (Screening screeningx : screeningList) {
+            System.out.println("Patient: " + screeningx.getPatient().getName() + " has a malignant diagnosis of " + screeningx.isMalignant());
+        }
     }
+
+    private static void printFindScreening() {
+        ScreeningDatabase screeningDatabase = new ScreeningDatabase();
+        ScreeningService screeningService = new ScreeningService(screeningDatabase);
+        Screening screening = screeningService.findScreening("Joe Brady");
+        if (screening != null) {
+            System.out.println("Patient: " + screening.getPatient().getName() + " has a malignant diagnosis of " + screening.isMalignant());
+        } else {
+            System.out.println("No Screening found");
+        }
+    }
+}
 
 
 
