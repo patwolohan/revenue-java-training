@@ -22,8 +22,8 @@ public class TagTrainingSpringApplication {
         SpringApplication.run(TagTrainingSpringApplication.class, args);
         printWelcomeMessage();
         //printlist();
-        //printService();
-        printFindScreening();
+        printService();
+        //printFindScreening();
     }
 
     private static void printWelcomeMessage() {
@@ -55,19 +55,20 @@ public class TagTrainingSpringApplication {
         }
     }
 
-    private static void printService() {
+    private static void printService() { // Task 3
         ScreeningDatabase screeningDatabase = new ScreeningDatabase();
         ScreeningService screeningService = new ScreeningService(screeningDatabase);
         List<Screening> screeningList = screeningService.getScreenings();
-        for (Screening screeningx : screeningList) {
+        /*for (Screening screeningx : screeningList) { // Java 6 for loop
             System.out.println("Patient: " + screeningx.getPatient().getName() + " has a malignant diagnosis of " + screeningx.isMalignant());
-        }
+        }*/
+        screeningList.forEach(screeningX -> System.out.println("Patient: " + screeningX.getPatient().getName() + " has a malignant diagnosis of " + screeningX.isMalignant()));
     }
 
-    private static void printFindScreening() {
+    private static void printFindScreening() { //Extra Task
         ScreeningDatabase screeningDatabase = new ScreeningDatabase();
         ScreeningService screeningService = new ScreeningService(screeningDatabase);
-        Screening screening = screeningService.findScreening("Joe Brady");
+        Screening screening = screeningService.findScreening("Mary Reilly");
         if (screening != null) {
             System.out.println("Patient: " + screening.getPatient().getName() + " has a malignant diagnosis of " + screening.isMalignant());
         } else {
