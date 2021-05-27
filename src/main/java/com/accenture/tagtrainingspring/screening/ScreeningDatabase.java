@@ -2,11 +2,13 @@ package com.accenture.tagtrainingspring.screening;
 
 import com.accenture.tagtrainingspring.patient.Gender;
 import com.accenture.tagtrainingspring.patient.Patient;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ScreeningDatabase{
 
 

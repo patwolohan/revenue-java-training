@@ -22,7 +22,7 @@ public class TagTrainingSpringApplication {
         SpringApplication.run(TagTrainingSpringApplication.class, args);
         printWelcomeMessage();
         //printlist();
-        printService();
+        //printService();
         //printFindScreening();
     }
 
@@ -39,7 +39,7 @@ public class TagTrainingSpringApplication {
     }
 
 
-    private static void printlist() {
+    /*private static void printlist() {
         Patient joe = new Patient("Joe Brady", 1, LocalDate.of(1940, 1, 1), Gender.MALE);
         Patient john = new Patient("John Duffy", 2, LocalDate.of(1950, 1, 1), Gender.MALE);
         Patient mary = new Patient("Mary Reilly", 3, LocalDate.of(1960, 1, 1), Gender.FEMALE);
@@ -53,19 +53,19 @@ public class TagTrainingSpringApplication {
         for (Screening screeningx : screeningList) {
             System.out.println("Patient: " + screeningx.getPatient().getName() + " has a malignant diagnosis of " + screeningx.isMalignant());
         }
-    }
+    }*/
 
-    private static void printService() { // Task 3
+    /*private static void printService() { // Task 3
         ScreeningDatabase screeningDatabase = new ScreeningDatabase();
         ScreeningService screeningService = new ScreeningService(screeningDatabase);
         List<Screening> screeningList = screeningService.getScreenings();
-        /*for (Screening screeningx : screeningList) { // Java 6 for loop
+        *//*for (Screening screeningx : screeningList) { // Java 6 for loop
             System.out.println("Patient: " + screeningx.getPatient().getName() + " has a malignant diagnosis of " + screeningx.isMalignant());
-        }*/
+        }*//*
         screeningList.forEach(screeningX -> System.out.println("Patient: " + screeningX.getPatient().getName() + " has a malignant diagnosis of " + screeningX.isMalignant()));
-    }
+    }*/
 
-    private static void printFindScreening() { //Extra Task
+    /*private static void printFindScreening() { //Extra Task
         ScreeningDatabase screeningDatabase = new ScreeningDatabase();
         ScreeningService screeningService = new ScreeningService(screeningDatabase);
         Screening screening = screeningService.findScreening("Mary Reilly");
@@ -74,7 +74,7 @@ public class TagTrainingSpringApplication {
         } else {
             System.out.println("No Screening found");
         }
-    }
+    }*/
 }
 
 
