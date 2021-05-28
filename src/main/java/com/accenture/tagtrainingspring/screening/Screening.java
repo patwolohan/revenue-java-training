@@ -1,54 +1,80 @@
 package com.accenture.tagtrainingspring.screening;
 
-import com.accenture.tagtrainingspring.patient.Patient;
 
-import java.time.LocalDate;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Screening {
 
-    private Integer screeningId;
-    private Patient patient;
-    private LocalDate dateOfScreening;
-    private boolean isMalignant;
+    private int id;
 
-    public boolean isMalignant() {
-        return isMalignant;
-    }
+    private char diagnosis;
 
-    public void setMalignant(boolean malignant) {
-        isMalignant = malignant;
-    }
+    private double radiusMean;
 
-    public Integer getScreeningId() {
-        return screeningId;
-    }
+    private double textureMean;
 
-    public void setScreeningId(Integer screeningId) {
-        this.screeningId = screeningId;
-    }
+    private double perimeterMean;
 
-    public Patient getPatient() {
-        return patient;
-    }
+    private double areaMean;
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
+    private double smoothnessMean;
 
-    public LocalDate getDateOfScreening() {
-        return dateOfScreening;
-    }
+    private double compactnessMean;
 
-    public void setDateOfScreening(LocalDate dateOfScreening) {
-        this.dateOfScreening = dateOfScreening;
-    }
+    private double concavityMean;
+
+    private double concavePointsMean;
+
+    private double symmetryMean;
+
+    private double fractalDimensionMean;
+
+    private double radiusSe;
+
+    private double textureSe;
+
+    private double perimeterSe;
+
+    private double areaSe;
+
+    private double smoothnessSe;
+
+    private double compactnessSe;
+
+    private double concavitySe;
+
+    private double concavePointsSe;
+
+    private double symmetrySe;
+
+    private double fractalDimensionSe;
+
+    private double radiusWorst;
+
+    private double textureWorst;
+
+    private double perimeterWorst;
+
+    private double areaWorst;
+
+    private double smoothnessWorst;
+
+    private double compactnessWorst;
+
+    private double concavityWorst;
+
+    private double concavePointsWorst;
+
+    private double symmetryWorst;
+
+    private double fractalDimensionWorst;
+
+    private char groupId;
 
 
 
-    public Screening(Integer screeningId, Patient patient, LocalDate dateOfScreening, boolean isMalignant) {
-        this.screeningId = screeningId;
-        this.patient = patient;
-        this.dateOfScreening = dateOfScreening;
-        this.isMalignant = isMalignant;
-    }
+
 }
